@@ -43,6 +43,12 @@
             <% end %>
           <%# </ul>
         </li> %>
+        <% if current_user %>
+          Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
+        <% else %>
+          <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+        <% end %>
+        <%= yield %>
       </ul>
       <ul class="navbar-nav">
         <li class="nav-item dropdown">
